@@ -2043,8 +2043,18 @@ input, select, textarea {
 			}
 
 			.main.style3.primary {
-				background: #ffffff;
+				background: #39454b;
+				color: #fff;
 			}
+
+			.main.style3.primary a {
+				color: #fff; /* Ensure links are also white */
+			}
+			
+			.main.style3.primary a:hover {
+				color: #ccc; /* Optionally, change link color on hover */
+			}
+			
 
 			.main.style3.secondary {
 				background: #f5f6f7;
@@ -2244,7 +2254,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("images/overlay.png"), url("../../images/intro.jpg");
+		background: url("images/overlay.png"), url("images/intro.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -2254,7 +2264,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("images/overlay.png"), url("../../images/one.jpg");
+		background: url("images/overlay.png"), url("images/1.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2263,7 +2273,7 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
+		background: url("images/overlay.png"), url("images/4.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2273,40 +2283,84 @@ input, select, textarea {
 
 	#contact {
 		overflow: hidden;
-		padding-bottom: 0;
+    	padding: 4em 0;
 	}
 
-		#contact .box {
-			-moz-transition: -moz-transform 1s ease;
-			-webkit-transition: -webkit-transform 1s ease;
-			-ms-transition: -ms-transform 1s ease;
-			transition: transform 1s ease;
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-			position: relative;
+	#contact .content {
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.contact-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+		margin-top: 2em;
+	}
+	
+	.profile-photo {
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		overflow: hidden;
+		background: url("images/intrpicDARK.jpg"); /* Placeholder color, replace with actual image */
+	}
+
+	.profile-photo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.contact-container {
+		max-width: 500px;
+		border: 2px solid #39454b;
+		border-radius: 25px;
+		padding: 20px;
+		background-color: #39454b;
+		color: #FFF;
+		font-family: Arial, sans-serif;
+	}
+
+	.contact-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 15px;
+	}
+
+	.contact-item:last-child {
+		margin-bottom: 0;
+	}
+	
+	.contact-item img {
+		width: 30px;
+		height: 30px;
+		margin-right: 15px;
+	}
+	
+	.contact-item a {
+		color: #FFF;
+		text-decoration: none;
+	}
+
+	.contact-item a:hover {
+		text-decoration: underline;
+	}
+	
+	/* Responsive design */
+	@media screen and (max-width: 768px) {
+		.contact-wrapper {
+			flex-direction: column;
 		}
-
-		#contact.inactive .box {
-			-moz-transform: translateY(100%);
-			-webkit-transform: translateY(100%);
-			-ms-transform: translateY(100%);
-			transform: translateY(100%);
+	
+		.profile-photo {
+			width: 200px;
+			height: 200px;
 		}
-
-		@media screen and (max-width: 736px) {
-
-			#contact .box {
-				padding: 1.5em 1.5em 2em 1.5em;
-			}
-
+	
+		.contact-container {
+			width: 90%;
 		}
-
-		@media screen and (max-width: 480px) {
-
-			#contact .box {
-				padding: 1em 1em 2em 1em;
-			}
-
-		}
+	}
